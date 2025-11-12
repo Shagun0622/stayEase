@@ -1,0 +1,259 @@
+/* Footer Styles */
+footer {
+  background-color: #f7f7f7;       /* light background like Airbnb */
+  color: #333;                     /* dark gray text */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 220px;                 /* responsive columns */
+  margin: 10px;
+}
+
+.footer-section h3 {
+  color: #ff385c;                  /* Airbnb pink for logo */
+  margin-bottom: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff385c;                  /* hover color like Airbnb */
+}
+
+
+/* --- Airbnb Style Cards --- */
+.listing-card {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.listing-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.listing-card:hover img {
+  transform: scale(1.05);
+}
+
+.listing-card .card-body {
+  padding: 15px;
+}
+
+/* Headings and layout */
+h2 {
+  color: #ff385c;
+}
+
+/* Button hover */
+.btn-outline-danger:hover {
+  background-color: #ff385c;
+  color: white;
+}
+
+/* Smooth transitions */
+.btn, .card {
+  transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 768px) {
+  .listing-card {
+    max-width: 100%;
+  }
+  .card-body {
+    text-align: center;
+  }
+}
+.listing-card {
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.listing-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.btn-outline-danger {
+  transition: transform 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  transform: translateY(-2px);
+  background-color: #ff385c;
+  color: white;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #ff385c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+/* === DEBUG FIX: Make trash icon visible === */
+i.fa-trash {
+  color: red !important;
+  font-size: 1.2rem !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  position:relative;
+}
+/* Align navbar correctly */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #fff;
+}
+
+.navbar .container-fluid {
+  align-items: center;
+}
+
+/* Ensure brand, search, and links align */
+@media (min-width: 768px) {
+  .navbar .navbar-brand {
+    flex-shrink: 0;
+  }
+  .navbar .search-bar {
+    margin: 0 auto;
+  }
+}
+/* ================================ */
+/* 💳 Booking Box Styling */
+/* ================================ */
+
+.booking-box {
+  position: sticky;
+  top: 90px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.booking-box h4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.booking-form .form-control {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+}
+
+.booking-form .form-control:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.2);
+}
+
+.booking-form button {
+  background-color: #ff385c;
+  border: none;
+  transition: 0.3s;
+}
+
+.booking-form button:hover {
+  background-color: #e31c5f;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+  .booking-box {
+    position: static;
+    margin-top: 1.5rem;
+  }
+}
+.search-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between;
+  height: auto !important;
+  padding: 6px 12px;
+}
+
+.search-bar {
+  transition: all 0.3s ease;
+}
+
+.search-bar input {
+  font-size: 0.95rem;
+}
+
+.search-bar input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.search-bar:hover {
+  box-shadow: 0 0 12px rgba(255, 56, 92, 0.2);
+}
+
+.search-bar button {
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #e03150;
+}

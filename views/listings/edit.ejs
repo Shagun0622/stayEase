@@ -1,0 +1,85 @@
+<% layout('/layout/boilerplate') %>
+
+<section class="edit-listing-section">
+  <div class="form-container">
+    <h3>Edit Your Listing</h3>
+
+    <form
+      method="POST"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      enctype="multipart/form-data"
+    >
+
+      <!-- 🏷️ Title -->
+      <input
+        name="listing[title]"
+        value="<%= listing.title %>"
+        placeholder="Title"
+        type="text"
+        required
+      />
+
+      <!-- 📝 Description -->
+      <textarea
+        name="listing[description]"
+        placeholder="Description"
+        required
+      ><%= listing.description %></textarea>
+
+      <!-- 🖼️ Current Image Preview -->
+      <% if (listing.image?.url) { %>
+        <div class="current-image mb-3">
+          <label>Current Image:</label><br />
+          <img
+            src="<%= listing.image.url %>"
+            alt="Current image"
+            style="max-width: 300px; border-radius: 10px; margin-top: 10px;"
+          />
+        </div>
+      <% } %>
+
+      <!-- 📤 Upload New Image -->
+      <label for="newImage">Replace Image (optional)</label>
+      <input
+        type="file"
+        id="newImage"
+        name="listing[image]"
+        accept="image/*"
+      />
+
+      <!-- 💰 Price -->
+      <input
+        name="listing[price]"
+        value="<%= listing.price %>"
+        placeholder="Price"
+        type="number"
+        required
+      />
+
+      <!-- 🌍 Country -->
+      <input
+        name="listing[country]"
+        value="<%= listing.country %>"
+        placeholder="Country"
+        type="text"
+        required
+      />
+
+      <!-- 📍 Location -->
+      <input
+        name="listing[location]"
+        value="<%= listing.location %>"
+        placeholder="Location"
+        type="text"
+        required
+      />
+
+      <!-- 💾 Save Button -->
+      <button type="submit" class="btn btn-add">Save Changes</button>
+    </form>
+
+    <div class="form-footer mt-3">
+      <a href="/listings/<%= listing._id %>" class="cancel-link">Cancel</a>
+    </div>
+  </div>
+</section>

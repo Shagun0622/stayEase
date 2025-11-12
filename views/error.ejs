@@ -1,0 +1,14 @@
+<% layout('/layout/boilerplate') %>
+
+<section class="error-page text-center" style="padding: 4rem 1rem;">
+  <div class="container">
+    <h1 style="font-size: 3rem; color: #dc3545;">Oops! Something went wrong ⚠️</h1>
+    <p style="font-size: 1.25rem; margin: 1rem 0; color: #555;">
+      <%= err.message || "An unexpected error occurred. Please try again later." %>
+    </p>
+
+    <a href="/listings" class="btn btn-primary mt-3" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+      ⬅️ Back to Listings
+    </a>
+  </div>
+</section>

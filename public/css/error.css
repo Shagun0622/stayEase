@@ -1,0 +1,79 @@
+.error-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page h1 {
+  font-weight: 700;
+}
+
+.error-page a {
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.error-page a:hover {
+  background-color: #0b5ed7;
+}
+/* =============================== */
+/* 💳 Booking Confirmation Styles */
+/* =============================== */
+
+.booking-confirmation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.confirmation-card {
+  max-width: 800px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.confirmation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.check-icon {
+  animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.booking-summary {
+  max-width: 600px;
+  margin-top: 1.5rem;
+}
+
+.booking-summary ul li {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.booking-summary img {
+  border-radius: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .confirmation-card {
+    padding: 2rem;
+  }
+
+  .booking-summary {
+    text-align: center;
+  }
+
+  .booking-summary ul {
+    padding: 0;
+  }
+}

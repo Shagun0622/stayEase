@@ -1,0 +1,57 @@
+<% layout('/layout/boilerplate') %>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Find Your Next Stay</h1>
+    <p>Explore unique stays, experiences, and destinations worldwide.</p>
+  </div>
+  </section>
+  <!-- 🏘️ Dynamic Listings -->
+<section class="listings">
+  <h2>Top Picks For You</h2>
+  <div class="listing-grid">
+    <% featured.forEach(listing => { %>
+      <div class="listing-card">
+        <% if (listing.image && listing.image.url) { %>
+          <img src="<%= listing.image.url %>" alt="<%= listing.title %>">
+        <% } else { %>
+          <img src="https://images.unsplash.com/photo-1761069234555-272f68348b53?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1175" alt="default stay">
+        <% } %>
+
+        <div class="listing-info">
+          <h3><%= listing.title %></h3>
+          <p><%= listing.description ? listing.description.slice(0, 70) : 'A great place to stay.' %>...</p>
+          <a href="/listings/<%= listing._id %>" class="view-btn">View Details</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<!-- 🏡 CTA Section -->
+<section class="cta">
+  <div class="cta-box">
+    <h2>Have a property to share?</h2>
+    <p>Join our community and start earning by listing your space today.</p>
+    <a href="/listings/new" class="btn-outline">List Your Property</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 StayEase — Designed with ❤️ by Wanderlust Team</p>
+</footer>
+
+<!-- 📅 Flatpickr -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#datePicker", {
+      mode: "range",
+      dateFormat: "Y-m-d",
+      minDate: "today",
+    });
+  });
+</script>

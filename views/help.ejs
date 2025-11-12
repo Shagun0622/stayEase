@@ -1,0 +1,142 @@
+<% layout('/layout/boilerplate') %>
+
+<section class="container my-5">
+
+  <!-- 💬 Hero Section -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold display-5 text-danger">Help Center</h1>
+    <p class="lead text-muted mt-3">
+      Need assistance? We're here to help you make your StayEase experience smooth and enjoyable.
+    </p>
+  </div>
+
+  <!-- 🔍 Search Bar -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+      <form class="d-flex shadow-sm rounded-pill overflow-hidden" onsubmit="return false;">
+        <input type="text" id="helpSearch" class="form-control border-0 ps-4" placeholder="Search help topics..." />
+        <button type="button" class="btn btn-danger px-4">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 📚 FAQ Section -->
+  <div class="accordion" id="helpAccordion">
+
+    <!-- Section 1 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+          🏠 How can I book a stay on StayEase?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          To book, simply search for your preferred location, select your stay, and click “Reserve.” You’ll receive a confirmation email instantly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          💳 How do I cancel or modify a booking?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          Go to “My Bookings” in your profile, select your reservation, and choose “Modify” or “Cancel.” Cancellation policies vary by property.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          👤 How do I reset my password?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          Click “Forgot Password” on the login page, enter your email, and follow the instructions sent to your inbox.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+          💰 When will I get my refund after cancellation?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          Refunds are processed within 5–7 business days after your cancellation is confirmed.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+          🧾 How do I contact StayEase customer support?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          You can reach us anytime via email at <a href="mailto:support@stayease.com" class="text-danger">support@stayease.com</a> or start a live chat from our website footer.
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="accordion-item shadow-sm mb-3 rounded-4 border-0">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+          🔒 How do I keep my StayEase account secure?
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+        <div class="accordion-body text-muted">
+          Use a strong password, avoid sharing login details, and enable two-factor authentication when available.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 📞 Contact Support -->
+  <div class="text-center mt-5">
+    <h3 class="fw-semibold mb-3">Still need help?</h3>
+    <p class="text-muted">
+      Reach our 24/7 customer support team via email or chat.
+    </p>
+    <a href="mailto:support@stayease.com" class="btn btn-danger px-4 py-2 rounded-pill me-3">
+      <i class="bi bi-envelope-fill me-2"></i>Email Support
+    </a>
+    <a href="#" class="btn btn-outline-secondary px-4 py-2 rounded-pill">
+      <i class="bi bi-chat-fill me-2"></i>Live Chat
+    </a>
+  </div>
+
+</section>
+
+<!-- 🧠 JS for FAQ Search Filter -->
+<script>
+  const searchInput = document.getElementById("helpSearch");
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    accordionItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? "block" : "none";
+    });
+  });
+</script>

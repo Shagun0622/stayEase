@@ -1,0 +1,203 @@
+/* ======================================== */
+/* 🏡 LISTING DETAILS PAGE (Airbnb Modern Layout) */
+/* ======================================== */
+
+body {
+  background-color: #fafafa;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  
+}
+
+/* 🌟 Main Card Container */
+.listing-details-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.listing-details-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* 🖼️ Image Container */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.03);
+}
+
+/* 🏷️ Title and Info */
+.details-content h2 {
+  font-weight: 700;
+  color: #ff385c;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.details-content p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.details-content .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 1rem;
+}
+
+/* 💰 Price */
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin-top: 0.8rem;
+}
+
+/* ✏️ Action Buttons */
+.action-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.action-buttons .btn {
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.action-buttons .btn-outline-danger:hover {
+  background-color: #ff385c;
+  color: white;
+}
+
+/* ❤️ Favorite Button */
+button.btn-outline-danger,
+button.btn-danger {
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.45rem 1.3rem;
+}
+
+button.btn-outline-danger:hover {
+  background-color: #ff385c;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 💬 Review Section */
+.reviews-section {
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.reviews-section h3 {
+  color: #ff385c;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.review-card strong {
+  color: #222;
+  font-size: 1rem;
+}
+
+.review-card small {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* No reviews text */
+.no-reviews {
+  text-align: center;
+  color: #777;
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* 🗺️ Map */
+#map {
+  height: 320px;
+  border-radius: 14px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 🧠 Responsive Design */
+@media (max-width: 768px) {
+  .listing-details-card {
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .image-container img {
+    max-height: 250px;
+  }
+
+  .details-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .details-content .description {
+    font-size: 0.95rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reviews-section h3 {
+    font-size: 1.2rem;
+  }
+}

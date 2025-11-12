@@ -1,0 +1,33 @@
+
+<% layout("/layout/boilerplate") %>
+
+<div class="container my-5 pt-5">
+  <div class="row justify-content-center">
+    <% for (let listing of listings) { %>
+      <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+        <div class="card listing-card shadow-sm border-0">
+          <img
+            src="<%= listing.image && listing.image.url ? listing.image.url : 'https://images.unsplash.com/photo-1761069234555-272f68348b53?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1175' %>"
+            class="card-img-top"
+            alt="<%= listing.title %>"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-semibold"><%= listing.title %></h5>
+            <p class="card-text text-muted small">
+              <%= listing.location %>, <%= listing.country %>
+            </p>
+            <p class="fw-bold text-dark mb-2">
+              ₹<%= listing.price?.toLocaleString('en-IN') || 0 %> / night
+            </p>
+            <a
+              href="/listings/<%= listing._id %>"
+              class="btn btn-outline-danger rounded-pill w-100"
+            >
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>

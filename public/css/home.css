@@ -1,0 +1,222 @@
+
+
+.navbar {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+
+/* Hero Section */
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60")
+    center/cover no-repeat;
+  height: calc(100vh - 80px); /* ensure visible area */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .hero {
+    height: calc(100vh - 70px);
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* 🏘️ Listings Section */
+.listings {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.listings h2 {
+  color: #ff385c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 🏡 Listings Grid Layout */
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Individual Listing Cards */
+.listing-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 340px;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.listing-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.listing-info h3 {
+  color: #ff385c;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.listing-info p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.view-btn {
+  background-color: #ff385c;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #e31c5f;
+}
+
+/* 💡 CTA Section */
+.cta {
+  text-align: center;
+  background-color: #fff3f3;
+  padding: 4rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.cta-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  color: #ff385c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+  background-color: #ff385c;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #e31c5f;
+}
+
+/* 🦶 Footer */
+footer {
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  
+  .listing-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .listing-info {
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+}
+.accordion-button {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.accordion-button:hover {
+  background-color: #ffe8e8;
+  color: #d32f2f;
+}

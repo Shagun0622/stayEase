@@ -1,0 +1,31 @@
+<% layout('/layout/boilerplate') %>
+
+<section class="container mt-4">
+  <h2 class="mb-4 text-danger">My Dashboard</h2>
+
+  <div class="card p-4 shadow-sm mb-4">
+    <h5 class="fw-bold">Welcome, <%= currentUser.username %>!</h5>
+    <p class="text-muted">You have added <strong><%= totalListings %></strong> listings.</p>
+    <a href="/listings/new" class="btn btn-danger btn-sm mt-2">+ Add New Listing</a>
+  </div>
+
+  <% if (myListings.length === 0) { %>
+    <p class="text-muted">You haven’t added any listings yet.</p>
+  <% } else { %>
+    <div class="row gy-4">
+      <% myListings.forEach(listing => { %>
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="<%= listing.image?.url || 'https://via.placeholder.com/300x200' %>" class="card-img-top" alt="<%= listing.title %>">
+            <div class="card-body">
+              <h6 class="fw-bold"><%= listing.title %></h6>
+              <p class="text-muted small mb-2"><%= listing.location %></p>
+              <a href="/listings/<%= listing._id %>" class="btn btn-outline-primary btn-sm">View</a>
+              <a href="/listings/<%= listing._id %>/edit" class="btn btn-outline-secondary btn-sm">Edit</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</section>

@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-md bg-white border-bottom shadow-sm py-2 fixed-top">
+  <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+    <!-- 🏠 Brand -->
+    <a class="navbar-brand fw-bold text-danger fs-4 d-flex align-items-center" href="/">
+      <i class="bi bi-house-door-fill me-2"></i>StayEase
+    </a>
+
+    <!-- 🌍 Center Search Bar -->
+    <div class="flex-grow-1 d-none d-md-flex justify-content-center">
+      <form 
+        action="/listings/search" 
+        method="GET" 
+        class="d-flex align-items-center search-bar shadow-sm bg-white rounded-pill px-3 py-1"
+        style="gap: 8px; width: 100%; max-width: 420px;"
+      >
+        <input 
+          type="text" 
+          name="q" 
+          placeholder="Search your stay..."
+          class="form-control border-0 rounded-pill px-3"
+          style="box-shadow: none;"
+          required
+        />
+        <button 
+          type="submit" 
+          class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
+          style="width: 38px; height: 38px;"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- 🔽 Suggestion Dropdown -->
+    <ul id="suggestions" class="list-group position-absolute w-100 mt-5 shadow-sm" 
+        style="top: 100%; left: 0; z-index: 1000; border-radius: 15px; display: none;"></ul>
+      </form>
+    </div>
+
+    <!-- 📱 Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 🧭 Right Side Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav align-items-center gap-3">
+
+        <a class="nav-link fw-semibold" href="/">Home</a>
+        <a class="nav-link fw-semibold" href="/listings">Explore</a>
+        <a class="nav-link fw-semibold" href="/about">About</a>
+
+        <% if (!currentUser) { %>
+          <a href="/login" class="btn btn-outline-dark rounded-pill px-3 py-1 ms-2">
+            <i class="bi bi-person-circle me-1"></i> Login
+          </a>
+          <a href="/register" class="btn btn-danger rounded-pill px-3 py-1 ms-2">
+            <i class="bi bi-person-plus me-1"></i> Sign Up
+          </a>
+        <% } else { %>
+          <div class="dropdown">
+            <button
+              class="btn btn-outline-dark rounded-pill px-3 py-1 ms-2 dropdown-toggle"
+              type="button"
+              id="userDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-person-circle me-1"></i> <%= currentUser.username %>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+              <li><a class="dropdown-item" href="/favorites">Favorites</a></li>
+              <li><a class="dropdown-item" href="/listings/new">Add Listing</a></li>
+              <li><a class="dropdown-item" href="/bookings/my">My Bookings</a></li>
+              <li><a class="dropdown-item text-danger" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

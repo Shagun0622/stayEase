@@ -1,0 +1,123 @@
+/* --- Create Listing Form Styles (Airbnb Style) --- */
+.create-listing-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.form-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h3 {
+  text-align: center;
+  color: #ff385c;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 6px rgba(255, 56, 92, 0.3);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-add {
+  background-color: #ff385c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #e31c5f;
+  transform: translateY(-2px);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cancel-link {
+  text-decoration: none;
+  color: #ff385c;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cancel-link:hover {
+  color: #e31c5f;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .form-container h3 {
+    font-size: 1.5rem;
+  }
+}
+/* ✅ Fix for invisible map in Leaflet */
+#map {
+  height: 400px !important;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  z-index: 1;
+}
+
+.leaflet-container {
+  z-index: 1 !important;
+  background: #f4f4f4; /* fallback color */
+}

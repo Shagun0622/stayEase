@@ -1,0 +1,119 @@
+<% layout('/layout/boilerplate') %>
+
+<section class="booking-confirmation-section container text-center my-5">
+  <div class="confirmation-card mx-auto shadow-sm bg-white p-5 rounded-4">
+    
+    <!-- ✅ Success Icon -->
+    <div class="check-icon mb-4">
+      <i class="fa-solid fa-circle-check text-success" style="font-size: 3.5rem;"></i>
+    </div>
+
+    <h2 class="fw-bold text-success mb-3 animate__animated animate__fadeInDown">Booking Confirmed!</h2>
+    <p class="text-muted mb-4 fs-5 animate__animated animate__fadeInUp">
+      Thank you for choosing <span class="fw-semibold text-danger">StayEase</span> for your next stay.
+    </p>
+
+    <!-- 📋 Booking Summary -->
+    <div class="booking-summary text-start mx-auto" style="max-width: 700px;">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5 text-center">
+          <img 
+            src="<%= booking.listing.image?.url || 'https://via.placeholder.com/400x250' %>"
+            alt="<%= booking.listing.title %>"
+            class="img-fluid rounded-4 shadow-sm animate__animated animate__zoomIn"
+            style="max-height: 220px; object-fit: cover;"
+          />
+        </div>
+
+        <div class="col-md-7">
+          <h4 class="fw-bold text-danger mb-2"><%= booking.listing.title %></h4>
+          <p class="text-muted mb-3">
+            <i class="fa-solid fa-location-dot me-1"></i>
+            <%= booking.listing.location %>, <%= booking.listing.country %>
+          </p>
+
+          <ul class="list-unstyled mb-3">
+            <li><strong>Check-in:</strong> <%= new Date(booking.checkIn).toDateString() %></li>
+            <li><strong>Check-out:</strong> <%= new Date(booking.checkOut).toDateString() %></li>
+            <li><strong>Guests:</strong> <%= booking.guests %></li>
+          </ul>
+
+          <p class="fw-bold fs-5 text-dark">
+            ₹<%= booking.listing.price.toLocaleString("en-IN") %>
+            <span class="text-muted fs-6">/ night</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧭 Action Buttons -->
+    <div class="mt-5">
+      <a href="/bookings/my" class="btn btn-outline-secondary rounded-pill px-4">
+        <i class="fa-solid fa-calendar-check me-1"></i> My Bookings
+      </a>
+      <a href="/listings/<%= booking.listing._id %>" class="btn btn-outline-danger rounded-pill px-4 ms-2">
+        <i class="fa-solid fa-arrow-left me-1"></i> Back to Listing
+      </a>
+      <a href="/listings" class="btn btn-danger rounded-pill px-4 ms-2">
+        <i class="fa-solid fa-compass me-1"></i> Explore More
+      </a>
+    </div>
+
+    <div class="text-muted mt-4 small">
+      Redirecting to <strong>My Bookings</strong> in 5 seconds...
+    </div>
+  </div>
+</section>
+
+<!-- 🕓 Auto-Redirect -->
+<script>
+  setTimeout(() => {
+    window.location.href = "/bookings/my";
+  }, 5000);
+</script>
+
+<!-- 🎨 Inline Styles (Airbnb-inspired Design) -->
+<style>
+  .booking-confirmation-section {
+    animation: fadeIn 0.6s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .confirmation-card {
+    max-width: 850px;
+    border: 1px solid #f1f1f1;
+  }
+
+  .check-icon i {
+    animation: popIn 0.6s ease;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .btn-outline-danger:hover {
+    background-color: #ff385c;
+    color: #fff;
+  }
+
+  .btn-danger:hover {
+    background-color: #e31c5f;
+  }
+
+  @media (max-width: 768px) {
+    .confirmation-card {
+      padding: 2rem;
+    }
+
+    .booking-summary img {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
