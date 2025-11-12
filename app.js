@@ -49,7 +49,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
 const store = Mongostore.create({
-  mongoUrl: dbURL,
+  mongoUrl: ATLASDB_URL,
   crypto: {
     secret: process.env.SECRET,
   },
