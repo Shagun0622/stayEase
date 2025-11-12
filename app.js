@@ -1,5 +1,6 @@
 // ------------------- Dependencies -------------------
 require("dotenv").config();
+const dbURL = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/stayEase";
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -49,7 +50,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
 const store = Mongostore.create({
-  mongoUrl: ATLASDB_URL,
+  mongoUrl: dbURL,
   crypto: {
     secret: process.env.SECRET,
   },
