@@ -1,84 +1,86 @@
-🏡 StayEase
+<!-- PROJECT HEADER -->
+<h1 align="center">🏨 StayEase – Property Booking Platform</h1>
+<h3 align="center">A Modern Full-Stack Booking Application Built with MERN</h3>
 
-A modern, full-stack accommodation booking platform inspired by Airbnb.
-Browse beautiful stays, add favorites, make bookings, and explore locations through interactive maps — all in one clean and seamless experience.
+<br/>
 
-✨ Features
-🌍 Explore Stays
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-StayEase-3B82F6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Stack-MERN-1E40AF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-0EA5E9?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-10B981?style=for-the-badge" />
+</p>
 
-View detailed listings with images, descriptions, pricing, and amenities
+---
 
-Filter through locations and find the perfect stay
+# 📌 Overview  
+**StayEase** is a full-stack property/hotel booking platform designed to deliver a clean, modern, and user-friendly experience for users to browse, search, and book stays.
 
-Fully responsive UI built with Bootstrap 5
+Built using the **MERN stack**, StayEase features:
+✔ Authentication  
+✔ Property listings  
+✔ Cloud image uploads  
+✔ Booking logic  
+✔ Filters  
+✔ Mobile responsiveness  
 
-🔐 User Authentication
+---
 
-Secure login & signup using Passport.js
+# ✨ Features  
+### **👤 Authentication**
+- Register / Login  
+- Secure password hashing  
+- Error handling  
 
-Session-based authentication
+### **🏠 Property Management**
+- Add new properties  
+- Edit or delete listings  
+- Upload images using Cloudinary  
 
-Protected routes for favorites, bookings, reviews, and dashboards
+### **🌍 Search & Filters**
+- Location-based search  
+- Price filters  
+- Category filters  
 
-💬 Reviews & Ratings
+### **🖼 Image Uploads**
+- Cloudinary integration  
+- Auto-resizing + secure file URLs  
 
-Leave reviews on listings
+### **📱 Fully Responsive UI**
+- Desktop, tablet, mobile friendly  
 
-1–5 star ratings
+### **⚙ Robust Backend**
+- Express.js REST API  
+- Mongoose schema models  
+- Validation + error responses  
 
-Auto-display on listing pages
+---
 
-Cascade deletion when listings are removed
+# 🛠 Tech Stack  
 
-❤️ Save Favorites
+### **Frontend**
+- EJS / HTML  
+- CSS  
+- JavaScript  
 
-Add/remove stays from favorites
+### **Backend**
+- Node.js  
+- Express.js  
 
-Personalized dashboard for saved stays
+### **Database**
+- MongoDB  
+- Mongoose ORM  
 
-📅 Booking System
+### **Cloud & Hosting**
+- Cloudinary (Image Storage)  
+- Render (Deployment)  
 
-AJAX booking form
+---
 
-Real-time confirmation modal
+# 🚀 Live Demo  
+Here is your live deployment link (Render):
 
-Price breakdown (nightly price, service fee, total)
-
-Stores booking data in MongoDB
-
-🌎 Interactive Maps
-
-Leaflet.js for dynamic maps
-
-GeoJSON coordinates for each listing
-
-Popups, markers, and map navigation
-
-☁️ Cloudinary Image Hosting
-
-Secure upload and retrieval of images
-
-Multer middleware for file handling
-
-Cloud-hosted listing images
-
-🧰 Tech Stack
-Category	Tools Used
-Frontend	EJS, Bootstrap 5, JavaScript
-Backend	Node.js, Express.js
-Database	MongoDB Atlas, Mongoose
-Auth	Passport.js, Express-Session
-File Uploads	Cloudinary, Multer
-Geolocation	Leaflet Maps, GeoJSON
-Deployment	Render
-
-stayEase/
-├── models/            # Mongoose schemas
-├── routes/            # Application routes
-├── views/             # EJS templates
-├── public/            # Static assets (CSS, JS, images)
-├── init/              # Seed data (sample listings)
-├── seed.js            # Database seeding script
-├── app.js             # Main application file
-├── package.json
-└── .env (not included)  
+```markdown
+<a href="https://stayease-5giw.onrender.com">
+  <img src="https://img.shields.io/badge/LIVE%20DEMO-3B82F6?style=for-the-badge" />
+</a>
